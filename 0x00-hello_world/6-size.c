@@ -4,8 +4,6 @@
  * main:  Print the string in the function
  *
  *
- * Description: using the mai  fucnction
- *
  * Return: 0 number
  */
 
@@ -13,7 +11,7 @@ int main(void)
 
 {
 	char c;
-	int i ;
+	int i;
 	long int li;
 	long long int lli;
 	float f;
