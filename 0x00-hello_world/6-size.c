@@ -1,7 +1,7 @@
 #include<stdio.h>
 
 /**
- * main:  Print the string in the function
+ * main - Point of Entry
  *
  *
  * Return: 0 number
