@@ -4,7 +4,7 @@
  * main - Entry point
  *
  * Description: Using the main function
- *
+ * Return : 0
  */
 int main(void)
 
