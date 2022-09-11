@@ -19,7 +19,7 @@ int main(void)
 			{
 				if (a < b && b < c)
 				{
-					if (coma == 0 )
+					if (coma == 0)
 					{
 						putchar('.');
 						putchar(32);
