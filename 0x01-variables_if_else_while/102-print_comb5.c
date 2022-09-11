@@ -34,13 +34,13 @@ int main(void)
 					++d;
 				}
 				++c;
-				d=0;
+				d = 0;
 			}
 			++b;
-			c=0;
+			c = 0;
 		}
 		++a;
-		b=0;
+		b = 0;
 	}
 
 	putchar(10);
