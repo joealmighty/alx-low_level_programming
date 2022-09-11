@@ -15,7 +15,7 @@ int main(void)
 	for (UP = 'A'; UP <= 'Z'; ++UP)
 		printf("%c", UP);
 
-		printf("\n");
+	printf("\n");
 
-		return (0);
+	return (0);
 }
