@@ -1,6 +1,6 @@
 #include <stdio.h>
 /**
-* main - Using the  main function 
+* main - Using the main function
 *
 * Return: end program
 */
@@ -32,6 +32,6 @@ int main(void)
 	}
 
 	putchar(10);
-	
+
 	return (0);
 }
