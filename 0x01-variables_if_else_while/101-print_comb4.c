@@ -21,7 +21,7 @@ int main(void)
 				{
 					if (coma == 0)
 					{
-						putchar('.');
+						putchar(',');
 						putchar(32);
 					}
 					coma = 0;
