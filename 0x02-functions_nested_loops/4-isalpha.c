@@ -4,7 +4,7 @@
 * the character is a letter or not
 *
 * @c: determinate variable
-*   
+*
 * Return: Get 1 if it's a letter,
 * 0 otherwise
 */
