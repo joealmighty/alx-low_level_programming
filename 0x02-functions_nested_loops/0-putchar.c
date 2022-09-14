@@ -1,6 +1,6 @@
 #include "main.h"
 /**
-* main: Decsribing the main function
+* main - the main function
 *
 * Return: Always end the Program
 */
