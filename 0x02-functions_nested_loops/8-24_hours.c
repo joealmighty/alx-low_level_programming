@@ -1,6 +1,6 @@
 #include "main.h"
 /**
-* Prototype jack_bauer - function
+* jack_bauer - function
 *
 */
 void jack_bauer(void)
