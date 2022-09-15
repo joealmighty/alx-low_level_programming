@@ -22,7 +22,8 @@ void times_table(void)
 			if (col > 0)
 			{
 				_putchar(' ');
-				(tens <= 0) ? _putchar(' ') : _putchar(tens + '0')
+				(tens <= 0) ? _putchar(' ') : _putchar(tens + '0');
+
 			}
 			_putchar(units + '0');
 			if (col < 9)
