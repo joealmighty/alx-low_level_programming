@@ -16,9 +16,9 @@ int is_prime(int x, int y)
 		return (is_prime(x, y + 1));
 }
 /**
-* is_prime_number
-* @n:
-* Return: 0 and 1
+* is_prime_number - prime number
+* @n: verification number
+* Return: 0 no prime and 1 prime
 */
 int is_prime_number(int n)
 {
