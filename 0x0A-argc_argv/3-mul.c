@@ -21,6 +21,7 @@ int main(int argc, char *argv[])
 		printf("Error\n");
 		return (1);
 	}
+
 	else
 	{
 		a= atoi(argv[1]);
@@ -28,5 +29,6 @@ int main(int argc, char *argv[])
 
 		printf("%d\n", a * b);
 	}
-		return (0);
+
+	return (0);
 }
