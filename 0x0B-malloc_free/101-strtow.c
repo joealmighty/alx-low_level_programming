@@ -5,7 +5,6 @@
 /**
 * strtow - splits a string to words
 * @str: string to split
-*
 * Return: a point to an array of strings or NULL
 */
 char **strtow(char *str)
