@@ -1,59 +1,89 @@
 #include "main.h"
 #include <stdlib.h>
-#include <string.h>
 
 /**
-* strtow - splits a string to words
-* @str: string to split
-* Return: a point to an array of strings or NULL
+* _calculate_word_height - calculate height of array for then allocate memory
+*
+* @str: str to evaluate and count words
+*
+* Return: word_height
 */
-
-char **strtow(char *str)
+int _calculate_word_height(char *str)
 {
-	char **arr_words = NULL;
-	int i, j = 0, wlen, slen, words = 0, sig = 0, pre_sig = 0;
+	int i = 0, length = 0;
+	int word_height = 0, flag_word = 0;
+	/*First, calculate length: word +\n + \0 */
 
-	if (str == NULL)
-		return (NULL);
-	slen = strlen(str);
-	for (i = 0; i < slen; i++)
+	while (str[i])
 	{
-		sig = (str[i] == 32 || str[i] == '\t') ? 0 : 1;
-		words = (pre_sig == 0 && sig == 1) ? words + 1 : words;
-		pre_sig = sig;
-	}
-	if (words == 0)
-		return (NULL);
-	arr_words = malloc(words * sizeof(char *));
-	if (arr_words == NULL)
-	{
-		free(arr_words);
-		return (NULL);
-	}
-	words = 0;
-	for (i = 0; i < slen; i++)
-	{
-		sig = (str[i] == 32 || str[i] == 9) ? 0 : 1;
-		if (sig)
+		flag_word = 0;
+		while (str[i] == ' ')
+			i++;
+		while (str[i] >= 33 && str[i] <= 126)
 		{
-			for (j = 0; str[i + j] != 32 && str[i + j] != 9; j++)
-				;
-			wlen = j;
-			arr_words[words] = malloc(wlen * sizeof(char));
-			if (arr_words[words] == NULL)
-			{
-				for (; words >= 0; words--)
-					free(arr_words[words]);
-				free(arr_words);
-				return (NULL);
-			}
-			for (j = 0; j < wlen; j++)
-			{
-				arr_words[words][j] = str[i + j];
-			}
-			words++;
-			i += wlen - 1;
+			i++;
+				length++;
+				flag_word = 1;
+		}
+		/* we identify how many words (number of \n) & add space for \n */
+		if (flag_word == 1)
+		{
+			length++;
+			word_height++;
 		}
 	}
-	return (arr_words);
+	if (word_height == 0)
+		return (0);
+	return (word_height + 1);
+}
+
+/**
+* strtow - create an array of word in a string
+*
+* @str: string to evaluate
+*
+* Return: bi-mensional array
+*/
+char **strtow(char *str)
+{
+	int i = 0, j = 0, k, l, word_height, word_width, flag_word = 0;
+	char **arr;
+
+	if (str == NULL || *str == '\0')
+		return (NULL);
+	word_height = _calculate_word_height(str);
+	arr = malloc(sizeof(char *) * word_height);
+	if (arr == 0 || word_height == 0)
+		return (NULL);
+	while (str[i])
+	{
+		flag_word = 0;
+		while (str[i] == ' ')
+			i++;
+		word_width = 0;
+		while (str[i + word_width] >= 33 && str[i + word_width] <= 126)
+		{
+			word_width++;
+			flag_word = 1;
+		}
+		/* we identify how many words (number of \n) & add space for \n */
+		if (flag_word == 1)
+		{
+			*(arr + j) = malloc((word_width + 1) * sizeof(char));
+			if (*(arr + j) == NULL || word_width == 0)
+			{
+				for (k = 0; k <= i; k++)
+					free(*(arr + k));
+				free(arr);
+				return (NULL);
+			}
+			/*creating the array*/
+			for (l = 0; l < word_width; l++)
+				arr[j][l] = str[i++];
+			arr[j][l] = '\0';
+			if (j <= word_height)
+				j++;
+		}
+	}
+	return (arr);
 }
