@@ -4,9 +4,7 @@
 
 /**
 * _isdigit - tells if the string consists of digits
-*
 * @argv: pointer to current item in argument
-*
 * Return: return 0 if all digits, 1 if not all digits.
 */
 int _isdigit(char *argv)
@@ -23,12 +21,9 @@ int _isdigit(char *argv)
 	}
 	return (0);
 }
-
 /**
 * _atoi - converts a string of ascii digits to the values they represent
-*
 * @s: pointer to the source string
-*
 * Return: value of digits
 */
 int _atoi(char *s)
@@ -47,13 +42,10 @@ int _atoi(char *s)
 	}
 	return (result);
 }
-
 /**
 * main - main function call
-*
 * @argc: argument count
 * @argv: 2D array of arguments
-*
 * Return: return 0 on success, 98 on failure
 */
 int main(int argc, char *argv[])
