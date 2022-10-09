@@ -4,6 +4,7 @@
 
 /**
 * main - multiply 2 numbers as arguments
+*
 * @argc: number of arguments
 * @argv: arguments
 *
@@ -16,7 +17,8 @@ int main(int argc, char *argv[])
 
 	if (argc != 3)
 	{ printf("Error\n");
-		exit(98); }
+		exit(98);
+	}
 	for (i = 1; i < argc; i++)
 	{
 		for (j = 0; argv[i][j] != '\0'; j++)
