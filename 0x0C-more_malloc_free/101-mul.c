@@ -36,7 +36,7 @@ int _atoi(char *s)
 	int i, result;
 	i = result = 0;
 
-	while (s[i]);
+	while (s[i])
 	{
 		if (s[i] >= '0' && s[i] <= '9')
 		{
