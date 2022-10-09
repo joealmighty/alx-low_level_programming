@@ -34,8 +34,8 @@ int _isdigit(char *argv)
 int _atoi(char *s)
 {
 	int i, result;
-	i = result = 0;
 
+	i = result = 0;
 	while (s[i])
 	{
 		if (s[i] >= '0' && s[i] <= '9')
