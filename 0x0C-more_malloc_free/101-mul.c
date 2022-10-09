@@ -4,10 +4,8 @@
 
 /**
 * main - multiply 2 numbers as arguments
-*
 * @argc: number of arguments
 * @argv: arguments
-*
 * Return: 0 success
 */
 int main(int argc, char *argv[])
