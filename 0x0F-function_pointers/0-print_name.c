@@ -2,7 +2,6 @@
 
 /**
 * print_name - Function to call a function
-*
 * @name: Parameter 1
 * @f: parameter function
 */
