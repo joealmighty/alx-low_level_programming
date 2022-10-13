@@ -25,7 +25,7 @@ void print_all(const char * const format, ...)
 			case 'i':  /* int */
 				printf("%i", va_arg(list, int));
 				break;
-				case 'c':  /* char *
+				case 'c':  /* char */
 				/* need a cast here since va_arg only takes fully promoted types */
 				printf("%c", va_arg(list, int));
 				break;
