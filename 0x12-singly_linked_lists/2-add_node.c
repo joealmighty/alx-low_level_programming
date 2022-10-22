@@ -2,8 +2,8 @@
 
 /**
 * add_node - function that adds a new node
-*
 * at the beginning of a list_t list.
+*
 * @head: Parameter with the head node
 * @str: parameter with the element str in
 * the structure
@@ -12,6 +12,7 @@
 list_t *add_node(list_t **head, const char *str)
 {
 	list_t *new;
+
 	new = malloc(sizeof(list_t));
 	if (new == NULL)
 	{
