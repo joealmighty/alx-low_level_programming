@@ -40,11 +40,12 @@ void check_elf(unsigned char *e_ident)
 				e_ident[index] != 'E' &&
 				e_ident[index] != 'L' &&
 				e_ident[index] != 'F')
+		{
+		dprintf(STDERR_FILENO, "Error: Not an ELF file\n");
+		exit(98);
+		}
 	}
-	dprintf(STDERR_FILENO, "Error: Not an ELF file\n");
-	exit(98);
 }
-
 /**
 * print_magic - Prints the magic numbers of an ELF header.
 * @e_ident: A pointer to an array containing the ELF magic numbers.
@@ -53,6 +54,7 @@ void check_elf(unsigned char *e_ident)
 void print_magic(unsigned char *e_ident)
 {
 	int index;
+
 	printf("  Magic:   ");
 
 	for (index = 0; index < EI_NIDENT; index++)
@@ -166,13 +168,11 @@ void print_osabi(unsigned char *e_ident)
 				printf("UNIX - TRU64\n");
 				break;
 		case ELFOSABI_ARM;
-
-		printf("ARM\n");
-		break;
+			printf("ARM\n");
+				break;
 		case ELFOSABI_STANDALONE:
-
-		printf("Standalone App\n");
-		break;
+				printf("Standalone App\n");
+				break;
 		default:
 		printf("<unknown: %x>\n", e_ident[EI_OSABI]);
 	}
@@ -198,7 +198,7 @@ void print_type(unsigned int e_type, unsigned char *e_ident)
 	printf("  Type:                              ");
 
 	switch (e_type
-			{
+		{
 			case ET_NONE:
 			printf("NONE (None)\n");
 			break;
@@ -216,7 +216,7 @@ void print_type(unsigned int e_type, unsigned char *e_ident)
 			break;
 			default:
 			printf("<unknown: %x>\n", e_type);
-			}
+		}
 }
 /**
 * print_entry - Prints the entry point of an ELF header.
